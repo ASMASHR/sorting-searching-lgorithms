@@ -1,0 +1,25 @@
+ALGORITHM insert_card
+    var
+        tab: table of INTEGER[50];
+        x: INTEGER;
+		i: INTEGER:=0;
+		j: INTEGER:=0;
+    begin
+        write ("pick a card");
+        read(x);
+        WHILE ((i < tab.length) AND (tab[i] <= x)) DO 
+            i++;
+    
+        IF (i = tab.length)  tab[i] = x; 
+
+        ELSE 
+            {
+                 FOR ( j FROM tab.length TO  i+1 STEP -1) 
+                    { tab[j] = tab[j - 1]; }
+                 tab[i] = x;
+            }
+            //  afficher les elements du tab trié
+        FOR ( i FROM 0 TO  tab.length STEP 1)         
+            write (tab);
+
+    end
