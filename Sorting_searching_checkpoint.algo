@@ -13,8 +13,7 @@ ALGORITHM insert_card
                             j = j - 1; }
                         tab[j + 1] = x;
                 }
-//  afficher les elements du tab trié
-        FOR ( i FROM 0 TO  tab.length STEP 1)         
-            write (tab[i]);
+//  afficher les elements du tab trié     
+            write (tab);
 
     end
