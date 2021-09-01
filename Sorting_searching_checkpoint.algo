@@ -2,24 +2,19 @@ ALGORITHM insert_card
     var
         tab: table of INTEGER[50];
         x: INTEGER;
-		i: INTEGER:=0;
+		i: INTEGER:=1;
 		j: INTEGER:=0;
     begin
-        write ("pick a card");
-        read(x);
-        WHILE ((i < tab.length) AND (tab[i] <= x)) DO 
-            i++;
-    
-        IF (i = tab.length)  tab[i] = x; 
-
-        ELSE 
-            {
-                 FOR ( j FROM tab.length TO  i+1 STEP -1) 
-                    { tab[j] = tab[j - 1]; }
-                 tab[i] = x;
-            }
-            //  afficher les elements du tab trié
+             FOR ( i FROM 1 TO tab.length STEP 1)
+                {  x = tab[i];
+                    j = i - 1;
+                    while ((j >= 0) AND (tab[j] > x)) DO
+                         {  tab[j + 1] = tab[j];
+                            j = j - 1; }
+                        tab[j + 1] = x;
+                }
+//  afficher les elements du tab trié
         FOR ( i FROM 0 TO  tab.length STEP 1)         
-            write (tab);
+            write (tab[i]);
 
     end
